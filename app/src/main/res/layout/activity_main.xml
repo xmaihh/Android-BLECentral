@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_main"
+        layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:id="@+id/ll_function"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_main"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/sendData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送" />
+
+        <Button
+            android:id="@+id/readData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读取" />
+
+        <Button
+            android:id="@+id/readRssi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读取RSSI" />
+
+        <Button
+            android:id="@+id/requestMtu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请求MTU" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sendEntityData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_function"
+        android:text="发送大数据" />
+
+    <TextView
+        android:id="@+id/connected_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="连接数量: "
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sendEntityData" />
+</RelativeLayout>
