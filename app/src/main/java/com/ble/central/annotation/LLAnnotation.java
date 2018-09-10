@@ -34,24 +34,24 @@ public class LLAnnotation {
      * @param activity
      */
     private static void bindEvents(Activity activity) {
-        // 获取方法上面的注解
+        // 获取activity的Class
         Class myClass = activity.getClass();
-        // 先拿到所有方法
+        // // 通过Class获取所有方法
         Method myMethod[] = myClass.getDeclaredMethods();
         for (Method method : myMethod) {
             Annotation[] annotations = method.getDeclaredAnnotations();
             for (Annotation annotation : annotations) {
                 Class<?> annotationType = annotation.annotationType();
-                // 拿到注解里面的注释
+                // 获取字段的注解
                 EventInterface eventInterface = annotationType.getAnnotation(EventInterface.class);
                 if (eventInterface == null) {
                     continue;
                 }
-                // 得到事件的三要素
+                // 获取字段注解的参数
                 String listenerSetter = eventInterface.listenerSetter();
                 Class listenerType = eventInterface.listenerType();
                 String callbackMethod = eventInterface.callbackMethod();
-                // 获取注解事件的控件对象Button
+                // 获取注解事件的控件对象
                 try {
                     Method valueMethod = annotationType.getDeclaredMethod("value");
                     try {

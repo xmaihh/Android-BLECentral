@@ -38,6 +38,7 @@ public class SingleClickAspect {
                 joinPoint.proceed();//执行原方法
             } else {
                 ToastUtil.show("点击太快!");
+                Log.d("chensy", "aroundJoinPoint: ");
             }
         }
     }
